@@ -4,7 +4,6 @@ require 'rubygems'
 require 'socket'
 require 'pp'
 require 'mysql2'
-require 'pry'
 
 class Parser
   
