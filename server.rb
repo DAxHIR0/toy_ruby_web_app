@@ -1,4 +1,3 @@
-#By: Bugz
 #This is a login web server
 #and my first webserver
 require 'rubygems'
@@ -33,9 +32,9 @@ def database
 
   dbh = Mysql2::Client.new(
     hostname: 'localhost', 
-    username: 'root', 
-    password: 'helloworld', 
-    database: 'user_pass')  
+    username: 'you', 
+    password: 'your_password', 
+    database: 'your_database')  
   value = dbh.query("SELECT pass_v FROM credintials").each(:as => :array).to_s
   dbh.close
   
@@ -59,7 +58,7 @@ def response(cli)
 
 end
 
-serv_sock = TCPServer.new('10.0.2.15', 8080)
+serv_sock = TCPServer.new('localhost', 8080)
   
 loop {
   client = serv_sock.accept()
